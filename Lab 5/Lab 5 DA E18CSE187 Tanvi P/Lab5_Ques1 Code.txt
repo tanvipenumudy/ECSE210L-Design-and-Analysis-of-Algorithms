@@ -1,0 +1,47 @@
+acti = [["silent-disco",12,100000],
+              ["Bon-fire",12,50000],
+              ["street-play",2,60000],
+              ["dancing-compition",8,75000],
+              ["short-film-screening",10,45000],
+              ["rangoli",2,50000],
+              ["scavenger-hunt",5,200000],
+              ["face-art",4,40000],
+              ["solo-music",7,95000],
+              ["group-music",7,150000],
+              ["Mime",11,120000],
+              ["poetry-recitation",11,300000]]
+data = []
+minn = 999
+penn = 99999999999999999
+index = 0
+k = 1
+for i in range(len(acti)):
+    for j in range(len(acti)-k):
+        if(acti[j][1]>acti[j+1][1]):
+            temp = acti[j]
+            acti[j] = acti[j+1]
+            acti[j+1] = temp
+    k=k+1
+    
+for i in range(len(acti)):
+    for j in range(i,len(acti)-1):
+        if(acti[j][1] == acti[j+1][1]):
+            if(acti[j][2] > acti[j+1][2]):
+                temp = acti[j]
+                acti[j] = acti[j+1]
+                acti[j+1] = temp
+            else:
+                break
+                
+penality = 0
+time = 0
+
+for i in range(len(acti)):
+    time = time + 1
+    if(acti[i][1]>=time):
+        print("On Time:",acti[i],time)
+    else:
+        print("Not On Time:",acti[i],time)
+        penality = penality + acti[i][2]
+print("============")
+print("penality is:",penality)

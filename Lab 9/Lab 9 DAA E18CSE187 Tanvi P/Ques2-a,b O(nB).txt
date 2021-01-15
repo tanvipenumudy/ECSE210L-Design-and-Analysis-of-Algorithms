@@ -1,0 +1,51 @@
+//Ques 2: O(nB) complexity
+
+//Input Format-First Line-Number of Testcases
+//Each Testcase has N and B
+//Second Line has N values - The i-th integer is Ai
+//Third Line has N values - The i-th integer is Ri
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ar array
+int n;
+int b;
+int a[100000];
+int r[100000];
+void func(){
+	cin>>n>>b;
+	for(int i=0;i<n;++i)
+		cin>>a[i];
+		cin>>r[i];
+	sort(r,r+n);
+	int ans=0;
+	for(int i=0;i<n;++i){
+		if(b>=a[i]){
+		b-=a[i];
+		++ans;
+		}
+	}
+	cout<<ans<<"\n";
+}
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	int t;
+	int i=1;
+	cin>>t;
+	while(t--){
+		func();
+		++i;
+	}
+}
+
+/* Input a(testcase-1),b:(testcase-2)-
+2
+5 26 //a
+12 7 11 8 9
+24 13 23 15 16
+7 50 //b
+31 10 20 19 4 3 6
+70 20 39 37 7 5 10
+*/ 

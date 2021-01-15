@@ -1,0 +1,13 @@
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+x=[]
+y=[]
+for i in range(20):
+a=random.randint(-40, 40)
+b=random.randint(-40, 40)
+x.append(a)
+y.append(b)
+file.close()
+plt.scatter(x, y)
+plt.show()
